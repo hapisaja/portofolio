@@ -14,7 +14,7 @@ function Portfolio() {
 
   // Ambil data project dari backend
   useEffect(() => {
-    fetch("http://localhost:5000/api/projects")
+    fetch("https://portofolio-production-19af.up.railway.app/api/projects")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error("Gagal ambil data:", err));
@@ -34,7 +34,7 @@ function Portfolio() {
     if (!konfirmasi) return;
   
     try {
-      const res = await fetch(`http://localhost:5000/api/projects/${id}`, {
+      const res = await fetch(`https://portofolio-production-19af.up.railway.app/api/projects/${id}`, {
         method: "DELETE",
       });
   
@@ -76,12 +76,12 @@ function Portfolio() {
     try {
       let res;
       if (editMode) {
-        res = await fetch(`http://localhost:5000/api/projects/${editingId}`, {
+        res = await fetch(`https://portofolio-production-19af.up.railway.app/api/projects/${editingId}`, {
           method: "PUT",
           body: form,
         });
       } else {
-        res = await fetch("http://localhost:5000/api/projects", {
+        res = await fetch("https://portofolio-production-19af.up.railway.app/api/projects", {
           method: "POST",
           body: form,
         });
@@ -175,7 +175,7 @@ function Portfolio() {
         <div key={index} className="bg-white rounded-lg shadow p-2 relative">
           {project.image && (
             <img
-              src={`http://localhost:5000${project.image}`}
+              src={`https://portofolio-production-19af.up.railway.app${project.image}`}
               alt={project.title}
               className="w-full h-48 object-cover rounded mb-4"
             />
