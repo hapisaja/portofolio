@@ -26,7 +26,7 @@ app.use(contactRoutes);
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
+  console.log(`✅ Server running at http://0.0.0.0:${PORT}`);
 });
 
 app.delete("/api/projects/:id", async (req, res) => {
